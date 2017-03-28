@@ -1,0 +1,52 @@
+extends layout
+block content
+  .container
+    .row
+      .col-md-6
+        form(role='form', method='post')
+          h4 XMPP Settings
+          .form-group
+            label(for='usr') Username:
+            input#usr.form-control(type='text', name='usr', placeholder="Username", value='#{config.JID}')
+          .form-group
+            label(for='pwd') Password:
+            input#pwd.form-control(type='password', name='pwd', placeholder='Password', value='#{config.PASSWORD}')
+          .form-group
+            label(for='svr') Server:
+            input#host.form-control(type='text', name='svr', placeholder="XMPP server", value='#{config.HOST}')
+          //- .form-group
+          //-   label(for='prt') Port:
+          //-   input#prt.form-control(type='text', name='prt', placeholder="Server PORT", value='#{config.xmpp.port}')
+      .col-md-6
+        h4 Monitor
+        .form-group
+          label(for='watch') Watch:
+          input#watch.form-control(type='text', name='watch', placeholder="user to watch", value='#{config.MONITOR}')
+        .form-group
+          label(for='words') Keywords:
+          br
+          textarea#words.form-control(style='width: 350px; height: 100px;', name='words') #{keywords}
+    .row
+      .col-md-6
+        h4 Site Settings
+        label(for='mode') Mode:
+        .radio
+          label
+            if config.MODE == "XMPP"
+              input#XMPP(type='radio', name='mode', value='XMPP' checked)
+              | XMPP
+            else
+              input#XMPP(type='radio', name='mode', value='XMPP')
+              | XMPP
+        .radio
+          label
+            if config.MODE == "manual"
+              input#manual(type='radio', name='mode', value='manual' checked)
+              | Manual
+            else
+              input#manual(type='radio', name='mode', value='manual')
+              | Manual
+      .col-mid-6
+    .row
+      .col-md-6
+        button.btn.btn-success(id='update', type='submit') Update

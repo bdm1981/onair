@@ -1,0 +1,10 @@
+{
+  apps : [{
+    name        : "On-Air",
+    script      : "./app.js",
+    watch       : ["./config.js", "./app.js"],
+    env: {
+      "NODE_ENV": "development",
+    }
+  }]
+}

@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  .container
+    .row
+      br
+      .col-md-5
+        .panel.panel-default
+          .panel-heading 
+            h3  Status
+          table.table
+            tr
+              td
+                strong Mode:
+              td
+                span#mode
+            tr
+              td
+                strong Light:
+              td
+                span#status
+            tr
+              td
+                strong Presence:
+              td
+                span#statusClient
+            tr
+              td
+                strong Status:
+              td
+                span#statusMessage
+            tr
+              td
+                strong Last Update:
+              td
+                span#statusUpdate
+      .col-md-5
+        .panel.panel-default
+          .panel-heading 
+            h3  Monitoring
+          table.table
+            tr
+              td
+                strong Watching:
+              td
+                span#monitor
+            tr
+              td
+                strong Keywords:
+              td
+                span #{keywords}
+
+        br
+        button.btn.btn-primary(type='button', onclick="location.href='/setup'") Update Settings

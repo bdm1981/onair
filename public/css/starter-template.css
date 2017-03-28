@@ -1,0 +1,31 @@
+body {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -30px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer{
+	height: 30px;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color: #f5f5f5;
+}

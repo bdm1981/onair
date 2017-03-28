@@ -1,0 +1,17 @@
+nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      span.navbar-text On-Air
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li(class= (title=='On-Air') ?'active':undefined)
+          a(href='/') Home
+        li(class= (title=='On-Air: Setup') ?'active':undefined)
+          a(href='/setup') Setup
+        li(class= (title=='On-Air: Contact') ?'active':undefined)
+          a(href='/contact') Contact
