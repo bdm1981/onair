@@ -9,7 +9,8 @@ XMPP activated call light
   * One for monitoring
   * Address of the account you want to monitor
 
-**System Prep**
+**System Prep:**
+
 Before installing this repo the following things must be done on the Pi
 
 I have tested this on the Pi 2 and Pi 3. It runs 10x better on the Pi 3. This install guide assumes you already have SSH access enabled to your Pi.
@@ -56,7 +57,7 @@ pm2 start process.json
 pm2 startup
 pm2 save
 ```
-**Usuage Instructions**
+**Usuage Instructions:**
 
 Once On-Air is running, it needs to be configured with your XMPP settings.
 
@@ -65,6 +66,10 @@ Once On-Air is running, it needs to be configured with your XMPP settings.
 3. Enter the XMPP address that will be **monitored**
 4. Modify the keywords to your liking
 5. Once the settings are saved, PM2 will restart the node process with the new settings.
+
+**Wiring up the Light:**
+
+_todo_
 
 Thats it! Changing the status of your user to something containing one of your keywords, should trigger the light.
 
