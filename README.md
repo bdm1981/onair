@@ -1,4 +1,4 @@
-# onair
+# On-Air
 XMPP activated call light
 
 **Requirements**
