@@ -73,7 +73,37 @@ Once On-Air is running, it needs to be configured with your XMPP settings.
 
 **Wiring up the Light:**
 
-_todo_
+The simple way to wire this up is with a relay from SainSmart that steps up the output voltage from the Pi in order to trigger the 5v relay. This can done as follows.
+
+![On-Air Wiring](https://s3.amazonaws.com/bdm-files/On-Air/On-Air-Connections.png "On-Air Wiring")
 
 Thats it! Changing the status of your user to something containing one of your keywords, should trigger the light.
+
+**Troubleshooting:**
+
+If your light is not triggering by changing your XMPP status, try manually updating the GPIO state from the Pi. 
+```bash
+sudo su
+gpio -g write 17 1
+gpio -g write 17 0
+``` 
+1 should turn the light on 
+0 should turn the light off
+
+If the light doesn't turn on and you do not hear the relay "click", check to make sure the relay is conneted to the correct PINs on the Pi.
+
+If this works but updating the status does not, try the following:
+
+* Log in with a deskop client such as Adium with the secondary XMPP client. Make sure it can see the presence of the XMPP account you are monitoring. If not make sure the primary account has added the secondary account to its contact list and has authorized the sharing of presence. Then try again
+
+* From the Pi run the following command to see if there are any errors
+```bash
+sudo su
+pm2 logs
+```
+When the status is updated, it should be logged to the console of the Pi
+
+
+
+
 
