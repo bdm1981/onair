@@ -1,3 +1,4 @@
+var hostname = window.location.hostname;
 
 $(document).on('click touchstart', '#on', function(e){
   e.preventDefault();
@@ -77,7 +78,7 @@ $(function() {
     status();
     lightState();
 
-  var socket = io.connect("192.168.210.77:3000");
+  var socket = io.connect(hostname+":3000");
   socket.on('connect', function(){
     socket.emit();
     console.log('socket io connected');
