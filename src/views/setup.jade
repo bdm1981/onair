@@ -38,14 +38,14 @@ block content
             else
               input#XMPP(type='radio', name='mode', value='XMPP')
               | XMPP
-        //- .radio
-        //-   label
-        //-     if config.MODE == "manual"
-        //-       input#manual(type='radio', name='mode', value='manual' checked)
-        //-       | Manual
-        //-     else
-        //-       input#manual(type='radio', name='mode', value='manual')
-        //-       | Manual
+        .radio
+          label
+            if config.MODE == "manual"
+              input#manual(type='radio', name='mode', value='manual' checked)
+              | Manual
+            else
+              input#manual(type='radio', name='mode', value='manual')
+              | Manual
       .col-mid-6
     .row
       .col-md-6
